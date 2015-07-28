@@ -11,7 +11,7 @@
     this.initIce();
   };
 
-  Signaling.prototype.connect = function() {
+  Signaling.prototype.join = function() {
     this.emit('join', this.room);
   }
 
@@ -20,7 +20,7 @@
       this.socket.on('ice', resolve);
     }.bind(this));
     this.connectPromise.then(function() {
-      this.socket.emit('iceRequest')
+      this.socket.emit('icerequest')
     }.bind(this));
   };
 
